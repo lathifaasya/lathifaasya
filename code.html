@@ -1,0 +1,613 @@
+<!DOCTYPE html><html lang="id" class="scroll-smooth"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lathifa — Portofolio UI/UX Editorial</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'primary': '#D4AF37',
+        'on-primary': '#0B0B0B',
+        'secondary': '#FFFFFF',
+        'on-secondary': '#0B0B0B',
+        'tertiary': '#A3A3A3',
+        'on-tertiary': '#0B0B0B',
+        'background': '#0B0B0B',
+        'on-background': '#FFFFFF',
+        'surface': '#141414',
+        'on-surface': '#FFFFFF',
+        'surface-variant': '#1C1C1C',
+        'on-surface-variant': '#A3A3A3',
+        'text-primary': '#FFFFFF',
+        'text-secondary': '#A3A3A3',
+        'border': '#262626',
+        'success': '#10B981',
+        'on-success': '#0B0B0B',
+        'warning': '#F59E0B',
+        'on-warning': '#0B0B0B',
+        'error': '#EF4444',
+        'on-error': '#1C1C1C',
+      },
+      borderRadius: {
+        'sm': '6px',
+        'DEFAULT': '8px',
+        'md': '12px',
+        'lg': '16px',
+        'full': '9999px',
+      },
+      spacing: {
+        'xs': '4px',
+        'sm': '8px',
+        'md': '16px',
+        'lg': '24px',
+        'xl': '32px',
+        '2xl': '48px',
+        '3xl': '64px',
+        '4xl': '96px',
+      },
+      fontFamily: {
+        'display': ['"Playfair Display"', 'sans-serif'],
+        'headline': ['"Playfair Display"', 'sans-serif'],
+        'title': ['"Inter"', 'sans-serif'],
+        'body': ['"Inter"', 'sans-serif'],
+        'label': ['"Inter"', 'sans-serif'],
+        'signature': ['"Cormorant Garamond"', 'sans-serif'],
+      },
+      fontSize: {
+        'display-lg': ['112px', { lineHeight: '112px', letterSpacing: '-2px', fontWeight: '700' }],
+        'display-lg-mobile': ['32px', { lineHeight: '36px', letterSpacing: '-0.5px', fontWeight: '700' }],
+        'headline-lg': ['56px', { lineHeight: '64px', letterSpacing: '-1px', fontWeight: '700' }],
+        'headline-lg-mobile': ['32px', { lineHeight: '38px', letterSpacing: '-0.5px', fontWeight: '700' }],
+        'headline-md': ['40px', { lineHeight: '48px', letterSpacing: '-0.5px', fontWeight: '600' }],
+        'headline-md-mobile': ['28px', { lineHeight: '34px', letterSpacing: '-0.25px', fontWeight: '600' }],
+        'title-lg': ['24px', { lineHeight: '32px', fontWeight: '600' }],
+        'title-md': ['18px', { lineHeight: '26px', fontWeight: '600' }],
+        'body-lg': ['18px', { lineHeight: '28px', fontWeight: '400' }],
+        'body-md': ['15px', { lineHeight: '24px', fontWeight: '400' }],
+        'label-lg': ['14px', { lineHeight: '20px', letterSpacing: '0.5px', fontWeight: '500' }],
+        'label-sm': ['12px', { lineHeight: '16px', letterSpacing: '0.8px', fontWeight: '500' }],
+        'signature': ['28px', { lineHeight: '32px', fontWeight: '600' }],
+      },
+      transitionDuration: {
+        'state-change': '150ms',
+        'card-hover': '300ms',
+        'image-zoom': '500ms',
+      },
+      transitionDelay: {
+        'state-change': '0ms',
+        'card-hover': '0ms',
+        'image-zoom': '0ms',
+      },
+      transitionTimingFunction: {
+        'state-change': 'ease-out',
+        'card-hover': 'cubic-bezier(0.2, 0, 0, 1)',
+        'image-zoom': 'cubic-bezier(0.2, 0, 0, 1)',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&amp;family=Inter:wght@400;500;600&amp;family=Playfair+Display:ital,wght@0,600;0,700;1,600&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet">
+  <style>
+    .material-symbols-outlined, .material-symbols-rounded, .material-symbols-sharp, .material-icons {
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      line-height: 1 !important;
+      box-sizing: content-box;
+      overflow: hidden;
+      white-space: nowrap;
+      direction: ltr;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body class="bg-background text-text-primary font-body antialiased selection:bg-primary selection:text-on-primary">
+  <div class="min-h-[1024px] flex flex-col" data-stitch-vh="min-h-[1024px]===min-h-screen">
+
+    <!-- Bilah Navigasi Sticky dengan Efek Frosted -->
+    <header class="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-md border-b border-border">
+      <div class="max-w-7xl mx-auto px-lg md:px-2xl h-20 flex items-center justify-between gap-md">
+        <!-- Monogram Merek -->
+        <a href="#" class="inline-flex items-center gap-sm min-h-11 rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">
+          <span class="font-signature italic text-signature text-primary leading-none" data-design-text-token="signature">LA</span>
+          <span class="font-label text-label-lg text-text-primary tracking-wide" data-design-text-token="label-lg">Lathifa</span>
+        </a>
+
+        <!-- Tautan Navigasi Tengah (Desktop) -->
+        <nav aria-label="Navigasi utama" class="hidden md:flex items-center gap-xl">
+          <a href="#projects" class="inline-flex items-center h-11 px-sm font-label text-label-lg text-text-secondary hover:text-text-primary transition-colors duration-state-change ease-state-change rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary" data-design-text-token="label-lg">Proyek</a>
+          <a href="#process" class="inline-flex items-center h-11 px-sm font-label text-label-lg text-text-secondary hover:text-text-primary transition-colors duration-state-change ease-state-change rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary" data-design-text-token="label-lg">Proses</a>
+          <a href="#tools" class="inline-flex items-center h-11 px-sm font-label text-label-lg text-text-secondary hover:text-text-primary transition-colors duration-state-change ease-state-change rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary" data-design-text-token="label-lg">Alat</a>
+          <a href="#testimonials" class="inline-flex items-center h-11 px-sm font-label text-label-lg text-text-secondary hover:text-text-primary transition-colors duration-state-change ease-state-change rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary" data-design-text-token="label-lg">Testimoni</a>
+        </nav>
+
+        <!-- Badge Ketersediaan & Pemicu Menu Seluler di Kanan -->
+        <div class="flex items-center gap-sm">
+          <!-- COMPONENT: badge-status -->
+          <span data-component-id="badge-status" data-component-type="badge" data-component-variant="status" role="status" class="hidden sm:inline-flex items-center gap-sm px-md py-xs rounded-full bg-surface border border-border text-text-secondary">
+            <span class="w-2 h-2 rounded-full bg-success shrink-0" aria-hidden="true"></span>
+            <span class="font-label text-label-sm text-text-primary" data-design-text-token="label-sm">Tersedia untuk Proyek</span>
+          </span>
+
+          <!-- Tombol Hamburger Seluler -->
+          <!-- COMPONENT: button-icon -->
+          <button id="mobile-menu-open" data-component-id="button-icon" data-component-type="button" data-component-variant="icon" type="button" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="mobile-drawer" class="md:hidden inline-flex items-center justify-center w-11 h-11 rounded bg-surface text-text-primary border border-border transition-colors duration-state-change ease-state-change hover:border-primary hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">
+            <span class="material-symbols-outlined text-title-md" aria-hidden="true">menu</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Laci Navigasi Geser Seluler -->
+    <div id="mobile-drawer" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true" aria-label="Navigasi seluler">
+      <div id="mobile-drawer-backdrop" class="fixed inset-0 bg-background/80 backdrop-blur-sm"></div>
+      <aside class="fixed top-0 right-0 bottom-0 w-72 bg-surface border-l border-border p-xl flex flex-col justify-between">
+        <div class="flex flex-col gap-xl">
+          <div class="flex items-center justify-between border-b border-border pb-md">
+            <span class="font-signature italic text-signature text-primary" data-design-text-token="signature">LA</span>
+            <button id="mobile-menu-close" type="button" aria-label="Tutup menu navigasi" class="inline-flex items-center justify-center w-11 h-11 rounded bg-background text-text-primary border border-border hover:border-primary hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">
+              <span class="material-symbols-outlined text-title-md" aria-hidden="true">close</span>
+            </button>
+          </div>
+          <nav aria-label="Tautan navigasi seluler" class="flex flex-col gap-sm">
+            <a href="#projects" class="mobile-nav-link flex items-center h-11 px-md rounded font-label text-label-lg text-text-primary hover:bg-background hover:text-primary transition-colors">Proyek</a>
+            <a href="#process" class="mobile-nav-link flex items-center h-11 px-md rounded font-label text-label-lg text-text-primary hover:bg-background hover:text-primary transition-colors">Proses</a>
+            <a href="#tools" class="mobile-nav-link flex items-center h-11 px-md rounded font-label text-label-lg text-text-primary hover:bg-background hover:text-primary transition-colors">Alat</a>
+            <a href="#testimonials" class="mobile-nav-link flex items-center h-11 px-md rounded font-label text-label-lg text-text-primary hover:bg-background hover:text-primary transition-colors">Testimoni</a>
+            <a href="#contact" class="mobile-nav-link flex items-center h-11 px-md rounded font-label text-label-lg text-primary hover:bg-background transition-colors">Kontak</a>
+          </nav>
+        </div>
+        <div class="pt-lg border-t border-border">
+          <span class="inline-flex items-center gap-sm px-md py-xs rounded-full bg-background border border-border">
+            <span class="w-2 h-2 rounded-full bg-success shrink-0" aria-hidden="true"></span>
+            <span class="font-label text-label-sm text-text-primary">Tersedia untuk Proyek</span>
+          </span>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Konten Utama -->
+    <main class="flex-1">
+
+      <!-- Bagian Hero -->
+      <section class="max-w-7xl mx-auto px-lg md:px-2xl pt-2xl md:pt-3xl pb-3xl md:pb-4xl border-b border-border">
+        <div class="flex flex-col gap-2xl">
+          <!-- Judul Editorial Monumental -->
+          <div class="flex flex-col gap-md">
+            <div class="flex flex-wrap items-center justify-between gap-md">
+              <span class="font-label text-label-sm uppercase text-primary tracking-widest" data-design-text-token="label-sm">Mahasiswa Desain Komunikasi Visual</span>
+              <span class="font-label text-label-sm uppercase text-text-secondary tracking-widest" data-design-text-token="label-sm">Edisi 2026</span>
+            </div>
+            <!-- COMPONENT: typography-display -->
+            <h1 data-component-id="typography-display" data-component-type="typography" data-component-variant="display" data-design-text-token="display-lg" class="font-display text-display-lg-mobile sm:text-headline-lg md:text-display-lg text-text-primary tracking-widest uppercase leading-none">PORTOFOLIO</h1>
+          </div>
+
+          <!-- Pemisahan Hero Bento: Potret + Proposisi Nilai & Metadata -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-lg items-stretch">
+            <!-- Potret Editorial Bernuansa Gelap -->
+            <div class="lg:col-span-5 bg-surface border border-border rounded-lg overflow-hidden">
+              <img src="./Foto%20lathifa/WhatsApp%20Image%202026-11-25%20at%2011.16.01.jpeg" alt="Potret studio editorial Lathifa, mahasiswa desain komunikasi visual" class="w-full h-full min-h-80 max-h-96 lg:max-h-none object-cover object-top">
+            </div>
+
+            <!-- Kolom Bento Proposisi Nilai & Metadata -->
+            <div class="lg:col-span-7 flex flex-col justify-between gap-lg">
+              <div class="bg-surface border border-border rounded-lg p-xl md:p-2xl flex-1 flex flex-col justify-between gap-xl">
+                <div class="flex flex-col gap-md">
+                  <span class="font-signature italic text-signature text-primary" data-design-text-token="signature">Jurusan Desain Komunikasi Visual</span>
+                  <p class="font-headline text-headline-md-mobile md:text-headline-md text-text-primary text-balance" data-design-text-token="headline-md">
+                    Saya merancang komunikasi visual yang menjembatani ide dan audiens.
+                  </p>
+                  <p class="font-body text-body-md text-text-secondary max-w-prose text-pretty" data-design-text-token="body-md">
+                    Fokus pada tipografi, identitas merek, dan media digital — mengubah gagasan kompleks menjadi bahasa visual yang jelas, estetik, dan mudah dipahami.
+                  </p>
+                </div>
+
+                <div class="flex flex-wrap items-center gap-md pt-lg border-t border-border">
+                  <a href="#projects" class="inline-flex items-center justify-center gap-sm h-11 px-xl rounded-full bg-primary text-on-primary font-label text-label-lg uppercase tracking-wider transition-colors duration-state-change ease-state-change hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">
+                    <span data-design-text-token="label-lg">Jelajahi Karya Pilihan</span>
+                    <span class="material-symbols-outlined text-title-md" aria-hidden="true">south_east</span>
+                  </a>
+                  <a href="#contact" class="inline-flex items-center justify-center gap-sm h-11 px-lg rounded bg-background text-text-primary border border-border font-label text-label-lg transition-colors duration-state-change ease-state-change hover:border-primary hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">
+                    <span data-design-text-token="label-lg">Hubungi Saya</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Baris Bento Metadata Lokasi & Ketersediaan Langsung -->
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-md">
+                <div class="bg-surface border border-border rounded-lg p-lg flex flex-col gap-xs">
+                  <span class="font-label text-label-sm uppercase text-text-secondary" data-design-text-token="label-sm">Bermarkas di</span>
+                  <span class="font-title text-title-md text-text-primary" data-design-text-token="title-md">Indonesia</span>
+                </div>
+                <div class="bg-surface border border-border rounded-lg p-lg flex flex-col gap-xs">
+                  <span class="font-label text-label-sm uppercase text-text-secondary" data-design-text-token="label-sm">Ketersediaan</span>
+                  <span class="font-title text-title-md text-primary" data-design-text-token="title-md">Tersedia · Q4 2026</span>
+                </div>
+                <div class="bg-surface border border-border rounded-lg p-lg flex flex-col gap-xs">
+                  <span class="font-label text-label-sm uppercase text-text-secondary" data-design-text-token="label-sm">Pengalaman</span>
+                  <span class="font-title text-title-md text-text-primary tabular-nums" data-design-text-token="title-md">8+ Tahun Keahlian</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bagian Proyek Pilihan -->
+      <section id="projects" class="max-w-7xl mx-auto px-lg md:px-2xl py-3xl md:py-4xl border-b border-border">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-md mb-2xl">
+          <div class="flex flex-col gap-xs">
+            <span class="font-label text-label-sm uppercase text-primary tracking-widest" data-design-text-token="label-sm">Studi Kasus</span>
+            <h2 class="font-headline text-headline-md-mobile md:text-headline-md text-text-primary uppercase" data-design-text-token="headline-md">PROYEK PILIHAN</h2>
+          </div>
+          <a href="#contact" class="inline-flex items-center gap-xs h-11 px-md rounded font-label text-label-lg text-text-secondary hover:text-primary transition-colors duration-state-change focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">
+            <span data-design-text-token="label-lg">Lihat Semua</span>
+            <span class="material-symbols-outlined text-title-md" aria-hidden="true">north_east</span>
+          </a>
+        </div>
+
+        <!-- Grid Proyek Responsif 3 Kolom -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-lg items-stretch">
+          <!-- Proyek 1: NIRMANA -->
+          <!-- COMPONENT: card-interactive -->
+          <a href="#contact" data-component-id="card-interactive" data-component-type="card" data-component-variant="interactive" class="group bg-surface border border-border rounded-lg p-xl flex flex-col justify-between gap-lg h-full transition-all duration-card-hover ease-card-hover hover:-translate-y-1 hover:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">
+            <div class="flex flex-col gap-lg">
+              <div class="overflow-hidden rounded-md bg-background aspect-[4/3] border border-border">
+                <img src="./Nirmana/WhatsApp%20Image%202026-11-25%20at%2012.06.12.jpeg" alt="Tampilan branding dan desain web Nirmana" class="w-full h-full object-cover transition-transform duration-image-zoom ease-image-zoom group-hover:scale-105">
+              </div>
+              <header class="flex flex-col gap-sm">
+                <span class="font-label text-label-sm uppercase text-primary" data-design-text-token="label-sm">Branding &amp; Desain Web</span>
+                <h3 class="font-headline text-title-lg text-text-primary group-hover:text-primary transition-colors duration-state-change" data-design-text-token="title-lg">NIRMANA</h3>
+                <p class="font-body text-body-md text-text-secondary text-pretty" data-design-text-token="body-md">
+                  Flagship digital editorial dan identitas visual khas untuk Nirmana, memadukan presisi, kesederhanaan, dan karakter yang tak terlupakan.
+                </p>
+              </header>
+            </div>
+            <div class="flex items-center justify-between pt-md border-t border-border">
+              <span class="font-label text-label-sm text-text-secondary" data-design-text-token="label-sm">Studi Kasus · 2026</span>
+              <span class="material-symbols-outlined text-title-md text-text-secondary group-hover:text-primary transition-colors" aria-hidden="true">arrow_forward</span>
+            </div>
+          </a>
+
+          <!-- Proyek 2: MOCKUP BAJU -->
+          <!-- COMPONENT: card-interactive -->
+          <a href="#contact" data-component-id="card-interactive" data-component-type="card" data-component-variant="interactive" class="group bg-surface border border-border rounded-lg p-xl flex flex-col justify-between gap-lg h-full transition-all duration-card-hover ease-card-hover hover:-translate-y-1 hover:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">
+            <div class="flex flex-col gap-lg">
+              <div class="overflow-hidden rounded-md bg-background aspect-[4/3] border border-border">
+                <img src="./Desain%20Baju/da.jpeg" alt="Tampilan mockup desain baju dan merchandise" class="w-full h-full object-cover transition-transform duration-image-zoom ease-image-zoom group-hover:scale-105">
+              </div>
+              <header class="flex flex-col gap-sm">
+                <span class="font-label text-label-sm uppercase text-primary" data-design-text-token="label-sm">Desain Mockup</span>
+                <h3 class="font-headline text-title-lg text-text-primary group-hover:text-primary transition-colors duration-state-change" data-design-text-token="title-lg">MOCKUP BAJU</h3>
+                <p class="font-body text-body-md text-text-secondary text-pretty" data-design-text-token="body-md">
+                  Mockup apparel dan merchandise dengan presentasi editorial, detail bordir yang tajam, dan komposisi siap pakai untuk kebutuhan branding.
+                </p>
+              </header>
+            </div>
+            <div class="flex items-center justify-between pt-md border-t border-border">
+              <span class="font-label text-label-sm text-text-secondary" data-design-text-token="label-sm">Studi Kasus · 2025</span>
+              <span class="material-symbols-outlined text-title-md text-text-secondary group-hover:text-primary transition-colors" aria-hidden="true">arrow_forward</span>
+            </div>
+          </a>
+
+          <!-- Proyek 3: FIGMA -->
+          <!-- COMPONENT: card-interactive -->
+          <a href="#contact" data-component-id="card-interactive" data-component-type="card" data-component-variant="interactive" class="group bg-surface border border-border rounded-lg p-xl flex flex-col justify-between gap-lg h-full transition-all duration-card-hover ease-card-hover hover:-translate-y-1 hover:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">
+            <div class="flex flex-col gap-lg">
+              <div class="overflow-hidden rounded-md bg-background aspect-[4/3] border border-border">
+                <img src="./Figma/Cuplikan%20layar%202026-11-26%20065419.png" alt="Tampilan sistem desain dan antarmuka di Figma" class="w-full h-full object-cover transition-transform duration-image-zoom ease-image-zoom group-hover:scale-105">
+              </div>
+              <header class="flex flex-col gap-sm">
+                <span class="font-label text-label-sm uppercase text-primary" data-design-text-token="label-sm">Desain Sistem &amp; UI</span>
+                <h3 class="font-headline text-title-lg text-text-primary group-hover:text-primary transition-colors duration-state-change" data-design-text-token="title-lg">FIGMA</h3>
+                <p class="font-body text-body-md text-text-secondary text-pretty" data-design-text-token="body-md">
+                  Sistem desain dan antarmuka interaktif di Figma, dengan komponen modular, token yang konsisten, dan alur kolaborasi siap diteruskan ke pengembangan.
+                </p>
+              </header>
+            </div>
+            <div class="flex items-center justify-between pt-md border-t border-border">
+              <span class="font-label text-label-sm text-text-secondary" data-design-text-token="label-sm">Studi Kasus · 2025</span>
+              <span class="material-symbols-outlined text-title-md text-text-secondary group-hover:text-primary transition-colors" aria-hidden="true">arrow_forward</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- Bagian Proses Saya -->
+      <section id="process" class="max-w-7xl mx-auto px-lg md:px-2xl py-3xl md:py-4xl border-b border-border">
+        <div class="flex flex-col gap-xs mb-2xl">
+          <span class="font-label text-label-sm uppercase text-primary tracking-widest" data-design-text-token="label-sm">Metodologi</span>
+          <h2 class="font-headline text-headline-md-mobile md:text-headline-md text-text-primary uppercase" data-design-text-token="headline-md">PROSES SAYA</h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-2xl items-stretch">
+          <!-- Kiri: Daftar Bernomor Vertikal (01 Eksplorasi hingga 05 Penyerahan) -->
+          <ol class="lg:col-span-7 flex flex-col divide-y divide-border border-t border-b border-border">
+            <li class="py-lg flex items-start gap-lg">
+              <span class="font-label text-label-lg text-primary tabular-nums pt-xs shrink-0" data-design-text-token="label-lg">01</span>
+              <div class="flex flex-col gap-xs">
+                <h3 class="font-headline text-title-lg text-text-primary" data-design-text-token="title-lg">Eksplorasi</h3>
+                <p class="font-body text-body-md text-text-secondary text-pretty" data-design-text-token="body-md">Wawancara pemangku kepentingan, audit kompetitor, dan riset pengguna mendalam untuk menemukan peluang utama.</p>
+              </div>
+            </li>
+            <li class="py-lg flex items-start gap-lg">
+              <span class="font-label text-label-lg text-primary tabular-nums pt-xs shrink-0" data-design-text-token="label-lg">02</span>
+              <div class="flex flex-col gap-xs">
+                <h3 class="font-headline text-title-lg text-text-primary" data-design-text-token="title-lg">Definisi</h3>
+                <p class="font-body text-body-md text-text-secondary text-pretty" data-design-text-token="body-md">Arsitektur informasi, perjalanan pengguna, dan posisi produk yang tajam sebelum satu piksel pun digeser.</p>
+              </div>
+            </li>
+            <li class="py-lg flex items-start gap-lg">
+              <span class="font-label text-label-lg text-primary tabular-nums pt-xs shrink-0" data-design-text-token="label-lg">03</span>
+              <div class="flex flex-col gap-xs">
+                <h3 class="font-headline text-title-lg text-text-primary" data-design-text-token="title-lg">Desain</h3>
+                <p class="font-body text-body-md text-text-secondary text-pretty" data-design-text-token="body-md">Arahan seni editorial, sistem desain modular, dan antarmuka berkualitas tinggi di atas grid 8px.</p>
+              </div>
+            </li>
+            <li class="py-lg flex items-start gap-lg">
+              <span class="font-label text-label-lg text-primary tabular-nums pt-xs shrink-0" data-design-text-token="label-lg">04</span>
+              <div class="flex flex-col gap-xs">
+                <h3 class="font-headline text-title-lg text-text-primary" data-design-text-token="title-lg">Prototipe</h3>
+                <p class="font-body text-body-md text-text-secondary text-pretty" data-design-text-token="body-md">Prototipe interaktif di Framer dan Figma untuk memvalidasi mikro-interaksi, gerak, dan kegunaan.</p>
+              </div>
+            </li>
+            <li class="py-lg flex items-start gap-lg">
+              <span class="font-label text-label-lg text-primary tabular-nums pt-xs shrink-0" data-design-text-token="label-lg">05</span>
+              <div class="flex flex-col gap-xs">
+                <h3 class="font-headline text-title-lg text-text-primary" data-design-text-token="title-lg">Penyerahan</h3>
+                <p class="font-body text-body-md text-text-secondary text-pretty" data-design-text-token="body-md">Spesifikasi siap produksi, serah terima berbasis token, dan kolaborasi erat dengan tim teknik hingga peluncuran.</p>
+              </div>
+            </li>
+          </ol>
+
+          <!-- Kanan: Kartu Aksen Visual Artistik -->
+          <div class="lg:col-span-5 relative bg-surface border border-border rounded-lg overflow-hidden min-h-80 flex flex-col justify-end">
+            <img src="https://lh3.googleusercontent.com/aida/ALJJyrDpEkJwskmB1OUbBgix-HkTQcdDe_at55IIQVIlMuvlJZRaB0tSn_iLJQohGhCXK_cPjwJZgwvwkHTVYEB3ppGv9z4w9LWhsFE1ngTxtIIYxaUsXWXtwORR2wYIj8wcOg3N33oYEs5z8_BoT1c9s42jTORWdR07tRRGaCaxQ-S5k3RUARD6W8hAWhUM7istkh7lT4H-4pl1d2R4hZsUimZQXIzzdxc-Pf-RbLLuR_yoPys1iWW76XjQ" alt="Karya seni kaca skulptural berwarna obsidian dan emas hangat dengan gaya minimalis" class="absolute inset-0 w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-transparent"></div>
+            <div class="relative z-10 p-xl flex flex-col gap-sm">
+              <span class="font-signature italic text-signature text-primary" data-design-text-token="signature">Presisi &amp; Jiwa</span>
+              <p class="font-headline text-title-lg text-text-primary text-balance" data-design-text-token="title-lg">
+                Setiap detail layak berada di sana. Kesederhanaan adalah ciri khas kemewahan.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bagian Alat yang Saya Gunakan -->
+      <section id="tools" class="max-w-7xl mx-auto px-lg md:px-2xl py-3xl md:py-4xl border-b border-border">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-md mb-2xl">
+          <div class="flex flex-col gap-xs">
+            <span class="font-label text-label-sm uppercase text-primary tracking-widest" data-design-text-token="label-sm">Alat &amp; Teknologi</span>
+            <h2 class="font-headline text-headline-md-mobile md:text-headline-md text-text-primary uppercase" data-design-text-token="headline-md">ALAT YANG SAYA GUNAKAN</h2>
+          </div>
+          <p class="font-body text-body-md text-text-secondary max-w-md text-pretty" data-design-text-token="body-md">
+            Peralatan standar industri untuk arsitektur antarmuka, prototipe gerak, dan kolaborasi produk asinkron.
+          </p>
+        </div>
+
+        <!-- Grid 8 Alat Bergaya Bento -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-md">
+          <div class="bg-surface border border-border rounded-lg p-lg md:p-xl flex flex-col items-center justify-center gap-md text-center transition-colors duration-state-change hover:border-primary min-w-0">
+            <span class="material-symbols-outlined text-headline-md-mobile text-primary" aria-hidden="true">design_services</span>
+            <div class="flex flex-col gap-xs min-w-0 w-full">
+              <span class="font-title text-title-md text-text-primary" data-design-text-token="title-md">Figma</span>
+              <span class="font-label text-label-sm text-text-secondary" data-design-text-token="label-sm">Sistem</span>
+            </div>
+          </div>
+
+          <div class="bg-surface border border-border rounded-lg p-lg md:p-xl flex flex-col items-center justify-center gap-md text-center transition-colors duration-state-change hover:border-primary min-w-0">
+            <span class="material-symbols-outlined text-headline-md-mobile text-primary" aria-hidden="true">web</span>
+            <div class="flex flex-col gap-xs min-w-0 w-full">
+              <span class="font-title text-title-md text-text-primary" data-design-text-token="title-md">Webflow</span>
+              <span class="font-label text-label-sm text-text-secondary" data-design-text-token="label-sm">Produksi</span>
+            </div>
+          </div>
+
+          <div class="bg-surface border border-border rounded-lg p-lg md:p-xl flex flex-col items-center justify-center gap-md text-center transition-colors duration-state-change hover:border-primary min-w-0">
+            <span class="material-symbols-outlined text-headline-md-mobile text-primary" aria-hidden="true">layers</span>
+            <div class="flex flex-col gap-xs min-w-0 w-full">
+              <span class="font-title text-title-md text-text-primary" data-design-text-token="title-md">Adobe XD</span>
+              <span class="font-label text-label-sm text-text-secondary" data-design-text-token="label-sm">Kerangka</span>
+            </div>
+          </div>
+
+          <div class="bg-surface border border-border rounded-lg p-lg md:p-xl flex flex-col items-center justify-center gap-md text-center transition-colors duration-state-change hover:border-primary min-w-0">
+            <span class="material-symbols-outlined text-headline-md-mobile text-primary" aria-hidden="true">animation</span>
+            <div class="flex flex-col gap-xs min-w-0 w-full">
+              <span class="font-title text-title-md text-text-primary" data-design-text-token="title-md">Framer</span>
+              <span class="font-label text-label-sm text-text-secondary" data-design-text-token="label-sm">Prototipe</span>
+            </div>
+          </div>
+
+          <div class="bg-surface border border-border rounded-lg p-lg md:p-xl flex flex-col items-center justify-center gap-md text-center transition-colors duration-state-change hover:border-primary min-w-0">
+            <span class="material-symbols-outlined text-headline-md-mobile text-primary" aria-hidden="true">photo_filter</span>
+            <div class="flex flex-col gap-xs min-w-0 w-full">
+              <span class="font-title text-title-md text-text-primary" data-design-text-token="title-md">Photoshop</span>
+              <span class="font-label text-label-sm text-text-secondary" data-design-text-token="label-sm">Visual</span>
+            </div>
+          </div>
+
+          <div class="bg-surface border border-border rounded-lg p-lg md:p-xl flex flex-col items-center justify-center gap-md text-center transition-colors duration-state-change hover:border-primary min-w-0">
+            <span class="material-symbols-outlined text-headline-md-mobile text-primary" aria-hidden="true">article</span>
+            <div class="flex flex-col gap-xs min-w-0 w-full">
+              <span class="font-title text-title-md text-text-primary" data-design-text-token="title-md">Notion</span>
+              <span class="font-label text-label-sm text-text-secondary" data-design-text-token="label-sm">Dokumen</span>
+            </div>
+          </div>
+
+          <div class="bg-surface border border-border rounded-lg p-lg md:p-xl flex flex-col items-center justify-center gap-md text-center transition-colors duration-state-change hover:border-primary min-w-0">
+            <span class="material-symbols-outlined text-headline-md-mobile text-primary" aria-hidden="true">draw</span>
+            <div class="flex flex-col gap-xs min-w-0 w-full">
+              <span class="font-title text-title-md text-text-primary" data-design-text-token="title-md">Illustrator</span>
+              <span class="font-label text-label-sm text-text-secondary" data-design-text-token="label-sm">Vektor</span>
+            </div>
+          </div>
+
+          <div class="bg-surface border border-border rounded-lg p-lg md:p-xl flex flex-col items-center justify-center gap-md text-center transition-colors duration-state-change hover:border-primary min-w-0">
+            <span class="material-symbols-outlined text-headline-md-mobile text-primary" aria-hidden="true">forum</span>
+            <div class="flex flex-col gap-xs min-w-0 w-full">
+              <span class="font-title text-title-md text-text-primary" data-design-text-token="title-md">Slack</span>
+              <span class="font-label text-label-sm text-text-secondary" data-design-text-token="label-sm">Sinkronisasi</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bagian Testimoni -->
+      <section id="testimonials" class="max-w-7xl mx-auto px-lg md:px-2xl py-3xl md:py-4xl border-b border-border">
+        <div class="flex flex-col gap-xs mb-2xl">
+          <span class="font-label text-label-sm uppercase text-primary tracking-widest" data-design-text-token="label-sm">Sudut Pandang Klien</span>
+          <h2 class="font-headline text-headline-md-mobile md:text-headline-md text-text-primary uppercase" data-design-text-token="headline-md">APRESIASI KLIEN</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-lg items-stretch">
+          <!-- Testimoni 1 -->
+          <!-- COMPONENT: card-elevated -->
+          <article data-component-id="card-elevated" data-component-type="card" data-component-variant="elevated" class="bg-surface border border-border rounded-lg p-xl flex flex-col justify-between gap-lg h-full">
+            <div class="flex flex-col gap-md">
+              <span class="font-headline text-headline-md-mobile text-primary leading-none" aria-hidden="true">“</span>
+              <p class="font-body text-body-md text-text-primary text-pretty" data-design-text-token="body-md">
+                Lathifa menerjemahkan filosofi merek kami ke dalam flagship digital yang terasa setara karya museum. Pertanyaan masuk ke studio berlipat ganda dalam enam minggu setelah peluncuran.
+              </p>
+            </div>
+            <header class="flex items-center gap-md pt-md border-t border-border">
+              <img src="./Foto%20aca/WhatsApp%20Image%202026-11-25%20at%2011.16.00.jpeg" alt="Potret Lathifa" class="w-11 h-11 rounded-full object-cover border border-border shrink-0">
+              <div>
+                <h3 class="font-title text-title-md text-text-primary" data-design-text-token="title-md">Lathifa</h3>
+                <p class="font-body text-label-sm text-text-secondary" data-design-text-token="label-sm">Direktur Kreatif, Nirmana</p>
+              </div>
+            </header>
+          </article>
+
+          <!-- Testimoni 2 -->
+          <!-- COMPONENT: card-elevated -->
+          <article data-component-id="card-elevated" data-component-type="card" data-component-variant="elevated" class="bg-surface border border-border rounded-lg p-xl flex flex-col justify-between gap-lg h-full">
+            <div class="flex flex-col gap-md">
+              <span class="font-headline text-headline-md-mobile text-primary leading-none" aria-hidden="true">“</span>
+              <p class="font-body text-body-md text-text-primary text-pretty" data-design-text-token="body-md">
+                Jarang ditemukan desainer dengan selera editorial sekaligus pemikiran sistem yang disiplin. Presentasi mockup produk kami jadi jauh lebih rapi dan siap pakai untuk kebutuhan pitching.
+              </p>
+            </div>
+            <header class="flex items-center gap-md pt-md border-t border-border">
+              <img src="./footage/WhatsApp%20Image%202026-11-25%20at%2011.16.56.jpeg" alt="Potret Lathifa" class="w-11 h-11 rounded-full object-cover border border-border shrink-0">
+              <div>
+                <h3 class="font-title text-title-md text-text-primary" data-design-text-token="title-md">Lathifa</h3>
+                <p class="font-body text-label-sm text-text-secondary" data-design-text-token="label-sm">Pendiri, Studio Kreatif</p>
+              </div>
+            </header>
+          </article>
+
+          <!-- Testimoni 3 -->
+          <!-- COMPONENT: card-elevated -->
+          <article data-component-id="card-elevated" data-component-type="card" data-component-variant="elevated" class="bg-surface border border-border rounded-lg p-xl flex flex-col justify-between gap-lg h-full">
+            <div class="flex flex-col gap-md">
+              <span class="font-headline text-headline-md-mobile text-primary leading-none" aria-hidden="true">“</span>
+              <p class="font-body text-body-md text-text-primary text-pretty" data-design-text-token="body-md">
+                Bekerja dengan Lathifa terasa mudah. Dia menantang asumsi kami sejak awal, membangun sistem desain di Figma dengan cepat, dan menghasilkan file yang dibanggakan seluruh tim.
+              </p>
+            </div>
+            <header class="flex items-center gap-md pt-md border-t border-border">
+              <img src="./foto%20acaw/WhatsApp%20Image%202026-11-25%20at%2011.16.01%20(1).jpeg" alt="Potret Lathifa" class="w-11 h-11 rounded-full object-cover border border-border shrink-0">
+              <div>
+                <h3 class="font-title text-title-md text-text-primary" data-design-text-token="title-md">Lathifa</h3>
+                <p class="font-body text-label-sm text-text-secondary" data-design-text-token="label-sm">VP Produk, Tim Desain</p>
+              </div>
+            </header>
+          </article>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Bagian Footer / Kontak -->
+    <footer id="contact" class="max-w-7xl mx-auto w-full px-lg md:px-2xl py-3xl md:py-4xl">
+      <div class="bg-surface border border-border rounded-lg p-xl md:p-3xl flex flex-col items-center text-center gap-xl">
+        <span class="font-signature italic text-signature text-primary" data-design-text-token="signature">Mulai Percakapan</span>
+        <h2 class="font-headline text-headline-lg-mobile md:text-headline-lg text-text-primary text-balance max-w-3xl" data-design-text-token="headline-lg">
+          Mari Ciptakan Sesuatu yang Luar Biasa
+        </h2>
+        <p class="font-body text-body-lg text-text-secondary max-w-xl text-pretty" data-design-text-token="body-lg">
+          Saat ini menerima proyek terpilih di bidang desain produk, sistem desain, dan flagship merek untuk Q4 2026.
+        </p>
+
+        <div class="flex flex-wrap items-center justify-center gap-md">
+          <!-- COMPONENT: button-primary -->
+          <a href="mailto:hello@lathifa.design?subject=Project%20Inquiry" data-component-id="button-primary" data-component-type="button" data-component-variant="primary" class="inline-flex items-center justify-center gap-sm h-12 px-xl rounded-full bg-primary text-on-primary font-label text-label-lg uppercase tracking-wider transition-colors duration-state-change ease-state-change hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-surface">
+            <span data-design-text-token="label-lg">KIRIM PESAN</span>
+            <span class="material-symbols-outlined text-title-md" aria-hidden="true">north_east</span>
+          </a>
+
+          <!-- Tombol Salin Email Langsung -->
+          <button id="copy-email-btn" type="button" class="inline-flex items-center justify-center gap-sm h-12 px-lg rounded-full bg-background text-text-primary border border-border font-label text-label-lg transition-colors duration-state-change ease-state-change hover:border-primary hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">
+            <span class="material-symbols-outlined text-title-md text-primary" aria-hidden="true">content_copy</span>
+            <span id="copy-email-label" data-design-text-token="label-lg">hello@lathifa.design</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Bilah Bawah: Tautan Media Sosial & Hak Cipta -->
+      <div class="mt-2xl pt-lg border-t border-border flex flex-col sm:flex-row items-center justify-between gap-md">
+        <p class="font-label text-label-sm text-text-secondary" data-design-text-token="label-sm">
+          © 2026 Lathifa Studio. Seluruh hak dilindungi.
+        </p>
+        <nav aria-label="Tautan media sosial" class="flex flex-wrap items-center gap-md">
+          <a href="https://dribbble.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center h-11 px-sm font-label text-label-sm uppercase text-text-secondary hover:text-primary transition-colors rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">Dribbble</a>
+          <a href="https://behance.net" target="_blank" rel="noopener noreferrer" class="inline-flex items-center h-11 px-sm font-label text-label-sm uppercase text-text-secondary hover:text-primary transition-colors rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">Behance</a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center h-11 px-sm font-label text-label-sm uppercase text-text-secondary hover:text-primary transition-colors rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">LinkedIn</a>
+          <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center h-11 px-sm font-label text-label-sm uppercase text-text-secondary hover:text-primary transition-colors rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">X / Twitter</a>
+        </nav>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    (function () {
+      var openBtn = document.getElementById('mobile-menu-open');
+      var closeBtn = document.getElementById('mobile-menu-close');
+      var drawer = document.getElementById('mobile-drawer');
+      var backdrop = document.getElementById('mobile-drawer-backdrop');
+      var navLinks = document.querySelectorAll('.mobile-nav-link');
+
+      function setDrawer(open) {
+        if (!drawer || !openBtn) return;
+        drawer.classList.toggle('hidden', !open);
+        openBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      }
+
+      if (openBtn) openBtn.addEventListener('click', function () { setDrawer(true); });
+      if (closeBtn) closeBtn.addEventListener('click', function () { setDrawer(false); });
+      if (backdrop) backdrop.addEventListener('click', function () { setDrawer(false); });
+      navLinks.forEach(function (link) {
+        link.addEventListener('click', function () { setDrawer(false); });
+      });
+
+      var copyBtn = document.getElementById('copy-email-btn');
+      var copyLabel = document.getElementById('copy-email-label');
+      if (copyBtn && copyLabel) {
+        copyBtn.addEventListener('click', function () {
+          var email = 'hello@lathifa.design';
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(email).catch(function () {});
+          }
+          copyLabel.textContent = 'Tersalin ke clipboard';
+          setTimeout(function () {
+            copyLabel.textContent = email;
+          }, 2000);
+        });
+      }
+    })();
+  </script>
+
+
+</body></html>
